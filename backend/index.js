@@ -11,7 +11,11 @@ const app = express()
 
 db()
 
-app.use(cors)
+app.use(cors({
+    origin: 'https://blockchain-certificate-verification.netlify.app',
+    credentials: true
+}))
+
 app.use(express.json())
 
 app.use('/api/auth', authRoute)
@@ -19,9 +23,9 @@ app.use('/api/certificate', certificateRoute)
 app.use('/api/dashboard', dashboardRoute)
 
 app.get('/', (req, res) => {
-  res.send('Server is running');
+    res.send('Server is running');
 });
 
-app.listen(PORT,'0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 })
