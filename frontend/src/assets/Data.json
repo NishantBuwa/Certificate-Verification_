@@ -1,0 +1,39 @@
+[
+    {
+        "heading": "Basic Plan",
+        "price":"5000/Month",
+        "subheading":"Ideal for testing and small institutions",
+        "points":[
+            "Issue up to 100 certificates/month",
+            "Public certificate verification",
+            "24*7 chat Support"
+        ],
+        "button":"Check Out ➡️"
+    },
+    {
+        "heading": "Standard Plan",
+        "price":"7499/Month",
+        "subheading":"For growing institutions needing regular certificate issuing",
+        "points":[
+            "Issue up to 2000 certificates/month",
+            "Public certificate verification",
+            "24*7 chat Support",
+            "Branding with institution name/logo"
+        ],
+        "button":"Check Out ➡️"
+    },
+    {
+        "heading": "Premium Plan",
+        "price":"10000/Month",
+        "subheading":"Unlimited certificate issuing",
+        "points":[
+            "Issue Unlimited certificates",
+            "Public certificate verification",
+            "24*7 chat Support",
+            "Branding with institution name/logo",
+            "API Access",
+            "Priority Support"
+        ],
+        "button":"Check Out ➡️"
+    }
+]
