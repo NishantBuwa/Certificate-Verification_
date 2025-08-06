@@ -23,7 +23,7 @@ function Home() {
         }
         try {
             console.log("ENV: ",process.env.REACT_APP_API_URL)
-            const res = await fetch(`${REACT_APP_API_URL}/api/certificate/verify`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/api/certificate/verify`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
