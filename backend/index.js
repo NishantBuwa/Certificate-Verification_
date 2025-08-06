@@ -5,7 +5,7 @@ const authRoute = require('./routes/authRoute')
 const certificateRoute = require('./routes/certificateRoute')
 const dashboardRoute = require('./routes/dashboardRoute')
 const db = require('./db')
-const PORT = 4000
+const PORT = 5000
 
 const app = express()
 
