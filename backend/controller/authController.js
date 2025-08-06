@@ -15,7 +15,7 @@ const registerAdmin = async (req, res) => {
             name, iname, iemail, employeeid, plan, password: hashedPassword
         })
     
-        const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, { expiresIn: "7D" })
+        const token = jwt.sign({ id: admin._id }, process.env.REACT_APP_JWT_SECRET, { expiresIn: "7D" })
         console.log(req.body)
         return res.status(201).json({
             success: true,
@@ -41,7 +41,7 @@ const loginAdmin = async (req,res) => {
         if(!isMatch)
             return res.status(400).json({success:false,message:"invalid credentials"})
 
-        const token = jwt.sign({id:user._id}, process.env.JWT_SECRET,{expiresIn:"7D"})
+        const token = jwt.sign({id:user._id}, process.env.REACT_APP_JWT_SECRET,{expiresIn:"7D"})
         return res.json({
             success: true,
             token,

@@ -18,7 +18,7 @@ function Dashboard({admin}) {
             iname: admin.iname
         }
         try {
-            const res = await fetch(`${process.env.API_URL}/api/dashboard/data`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/api/dashboard/data`, {
                 method: 'POST',
                 headers: {
                     'Content-Type' : 'application/json'
@@ -44,7 +44,7 @@ function Dashboard({admin}) {
                 certificateID:cerId
             }
             console.log(dataToSend)
-            const res = await fetch(`${process.env.API_URL}/api/dashboard/search`,{
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/api/dashboard/search`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

@@ -18,7 +18,7 @@ function Upload({admin}) {
                 ...formData,
                 issuedBy:admin.id
             }
-            const res = await fetch(`${process.env.API_URL}/api/certificate/upload`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/api/certificate/upload`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

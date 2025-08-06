@@ -22,7 +22,8 @@ function Home() {
             ...data
         }
         try {
-            const res = await fetch(`${process.env.API_URL}/api/certificate/verify`, {
+            console.log("ENV: ",process.env.REACT_APP_API_URL)
+            const res = await fetch(`https://certificate-verification-m011.onrender.com/api/certificate/verify`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -31,10 +32,10 @@ function Home() {
             })
             const resData = await res.json();
             console.log(resData)
-            if (resData.valid===true) {
-                console.log(resData.details.issuedBy, resData.details.issuedFrom )
+            if (resData.valid === true) {
+                console.log(resData.details.issuedBy, resData.details.issuedFrom)
                 toast.success(`${resData.message}. Issued By: ${resData.details.issuedBy} (${resData.details.issuedFrom})`)
-            } else if(resData.valid===false) {
+            } else if (resData.valid === false) {
                 toast.error(`${resData.message}, Original Holder: ${resData.details.studentName}`)
             }
         } catch (err) {
@@ -126,58 +127,63 @@ function Home() {
 
             {/* SCECTION-3 */}
 
-            <div className="sm:h-full sm:pb-0 pb-20 bg-cover sm:bg-center text-black" style={{ backgroundImage: `url(${bg})` }}>
+            <div className="sm:h-full sm:pb-0 pb-20 bg-cover sm:bg-center bg-fixed text-black" style={{ backgroundImage: `url(${bg})` }}>
                 <h1 className='text-3xl text-center sm:pt-20 pt-10 font-bold text-blue-600'>CHECK CERTIFICATE AUTHENTICITY</h1>
                 <p className='text-center font-bold mt-2 sm:p-0 px-8 py-2'>Just Enter the Verification ID and check your certificate is Valid or Not</p>
 
-                <div className="flex flex-col items-center mt-6 gap-5">
+                <div >
+                    <form className="flex flex-col items-center mt-6 gap-5" onSubmit={handleSubmit}>
 
-                    <div className="flex flex-row">
-                        <label className='w-[150px] sm:text-[16px] text-[13px] '>Name: </label>
-                        <input
-                            type='text'
-                            name='studentName'
-                            value={data.studentName}
-                            onChange={handleOnChange}
-                            className={`${input}`}
-                            required />
-                    </div>
+                        <div className="flex flex-row">
+                            <label className='w-[150px] sm:text-[16px] text-[13px] '>Name: </label>
+                            <input
+                                type='text'
+                                name='studentName'
+                                value={data.studentName}
+                                onChange={handleOnChange}
+                                className={`${input}`}
+                                required 
+                            />
+                        </div>
 
-                    <div className="flex flex-row">
-                        <label className='w-[150px] sm:text-[16px] text-[13px] '>Course: </label>
-                        <input
-                            type='text'
-                            name='course'
-                            value={data.course}
-                            onChange={handleOnChange}
-                            className={`${input}`}
-                            required />
-                    </div>
+                        <div className="flex flex-row">
+                            <label className='w-[150px] sm:text-[16px] text-[13px] '>Course: </label>
+                            <input
+                                type='text'
+                                name='course'
+                                value={data.course}
+                                onChange={handleOnChange}
+                                className={`${input}`}
+                                required 
+                            />
+                        </div>
 
-                    <div className="flex flex-row">
-                        <label className='w-[150px] sm:text-[16px] text-[13px] '>Issue Date: </label>
-                        <input
-                            type='date'
-                            name='issueDate'
-                            value={data.issueDate}
-                            onChange={handleOnChange}
-                            className={`${input}`}
-                            required />
-                    </div>
+                        <div className="flex flex-row">
+                            <label className='w-[150px] sm:text-[16px] text-[13px] '>Issue Date: </label>
+                            <input
+                                type='date'
+                                name='issueDate'
+                                value={data.issueDate}
+                                onChange={handleOnChange}
+                                className={`${input}`}
+                                required 
+                            />
+                        </div>
 
-                    <div className="flex flex-row">
-                        <label className='w-[150px] sm:text-[16px] text-[13px] '>Certificate ID: </label>
-                        <input
-                            type='text'
-                            name='certificateID'
-                            value={data.certificateID}
-                            onChange={handleOnChange}
-                            className={`${input}`}
-                            required />
-                    </div>
+                        <div className="flex flex-row">
+                            <label className='w-[150px] sm:text-[16px] text-[13px] '>Certificate ID: </label>
+                            <input
+                                type='text'
+                                name='certificateID'
+                                value={data.certificateID}
+                                onChange={handleOnChange}
+                                className={`${input}`}
+                                required 
+                            />
+                        </div>
 
-                    <button type="submit" className='mx-auto sm:w-[180px] w-[120px] bg-green-400 mt-6 text-center py-1 rounded-md border border-black' onClick={handleSubmit}>Submit</button>
-
+                        <button type="submit" className='mx-auto sm:w-[180px] w-[120px] bg-green-400 mt-6 text-center py-1 rounded-md border border-black' >Submit</button>
+                    </form>
                 </div>
                 {/* <div className="w-full flex flex-col items-center mt-7 ">
                     <div className="flex gap-2 items-center">
@@ -199,7 +205,7 @@ function Home() {
 
                 </div> */}
             </div>
-        </div> 
+        </div>
     )
 }
 
