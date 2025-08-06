@@ -15,6 +15,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "proxy":"https://certificate-verification-backend-ootv.onrender.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
