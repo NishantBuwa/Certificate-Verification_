@@ -37,6 +37,8 @@ function Home() {
                 toast.success(`${resData.message}. Issued By: ${resData.details.issuedBy} (${resData.details.issuedFrom})`)
             } else if (resData.valid === false) {
                 toast.error(`${resData.message}, Original Holder: ${resData.details.studentName}`)
+            } else {
+                toast.error(`${resData.message}`)
             }
         } catch (err) {
             console.log("Error occured during verification: ", err)

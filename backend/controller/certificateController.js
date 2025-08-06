@@ -31,7 +31,7 @@ const verifyCertificate = async (req, res) => {
     try {
         const cert = await Certificate.findOne({ certificateID });
         if (!cert)
-            return res.status(404).json({message: "Invalid Certificate" });
+            return res.status(200).json({message: "Invalid Certificate" });
         const txId = cert.txId
 
         const response = await axios.get(
