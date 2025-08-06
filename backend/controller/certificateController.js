@@ -38,7 +38,7 @@ const verifyCertificate = async (req, res) => {
             `https://api.tatum.io/v3/record?chain=MATIC&id=${txId}`,
             {
                 headers: {
-                    'x-api-key': process.env.TATUM_API_KEY,
+                    'x-api-key': process.env.REACT_APP_TATUM_API_KEY,
                     'accept': 'application/json'
                 }
             }
