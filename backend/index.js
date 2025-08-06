@@ -14,6 +14,7 @@ db()
 app.use(cors({
     origin: 'https://blockchain-certificate-verification.netlify.app',
     methods:['POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
     credentials: true
 }))
 
