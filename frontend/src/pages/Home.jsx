@@ -22,7 +22,7 @@ function Home() {
             ...data
         }
         try {
-            const res = await fetch('http://localhost:4000/api/certificate/verify', {
+            const res = await fetch(`${process.env.API_URL}/api/certificate/verify`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
