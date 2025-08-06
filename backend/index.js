@@ -18,10 +18,10 @@ app.use('/api/auth', authRoute)
 app.use('/api/certificate', certificateRoute)
 app.use('/api/dashboard', dashboardRoute)
 
-// app.get('/',(req,res)=>{
-//     res.send("Backend is running smoothly");
-// })
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 
-app.listen(PORT, () => {
-    console.log(`App is listening at ${PORT}`);
+app.listen(PORT,'0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
 })
