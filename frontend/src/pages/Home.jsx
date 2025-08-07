@@ -30,7 +30,6 @@ function Home() {
                 body: JSON.stringify(dataToSend)
             })
             const resData = await res.json();
-            console.log(resData)
             if (resData.valid === true) {
                 console.log(resData.details.issuedBy, resData.details.issuedFrom)
                 toast.success(`${resData.message}. Issued By: ${resData.details.issuedBy} (${resData.details.issuedFrom})`)
@@ -143,7 +142,7 @@ function Home() {
                                 value={data.studentName}
                                 onChange={handleOnChange}
                                 className={`${input}`}
-                                required 
+                                required
                             />
                         </div>
 
@@ -155,7 +154,7 @@ function Home() {
                                 value={data.course}
                                 onChange={handleOnChange}
                                 className={`${input}`}
-                                required 
+                                required
                             />
                         </div>
 
@@ -167,7 +166,7 @@ function Home() {
                                 value={data.issueDate}
                                 onChange={handleOnChange}
                                 className={`${input}`}
-                                required 
+                                required
                             />
                         </div>
 
@@ -179,7 +178,7 @@ function Home() {
                                 value={data.certificateID}
                                 onChange={handleOnChange}
                                 className={`${input}`}
-                                required 
+                                required
                             />
                         </div>
 

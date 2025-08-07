@@ -33,12 +33,11 @@ const verifyCertificate = async (req, res) => {
         if (!cert)
             return res.status(200).json({message: "Invalid Certificate" });
         const txId = cert.txId
-
         const response = await axios.get(
             `https://api.tatum.io/v3/record?chain=MATIC&id=${txId}`,
             {
                 headers: {
-                    'x-api-key': process.env.REACT_APP_TATUM_API_KEY,
+                    'x-api-key': process.env.TATUM_API_KEY,
                     'accept': 'application/json'
                 }
             }
@@ -75,7 +74,7 @@ const verifyCertificate = async (req, res) => {
         }
     } catch (err) {
         console.log("Error Occured: ", err)
-        return res.status(500).json({message:"Error Occured",error:err});
+        return res.status(500).json({message:"Error Occured", error:err});
     }
 }
 
