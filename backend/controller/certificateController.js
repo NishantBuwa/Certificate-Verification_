@@ -75,7 +75,7 @@ const verifyCertificate = async (req, res) => {
         }
     } catch (err) {
         console.log("Error Occured: ", err)
-        return res.status(500).json({message:"Error Occured"});
+        return res.status(500).json({message:"Error Occured",error:err});
     }
 }
 
