@@ -22,7 +22,6 @@ function Home() {
             ...data
         }
         try {
-            console.log("ENV: ",process.env.REACT_APP_API_URL)
             const res = await fetch(`${process.env.REACT_APP_API_URL}/api/certificate/verify`, {
                 method: 'POST',
                 headers: {

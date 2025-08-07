@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.REACT_APP_MONGODB_URI);
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log("✅ MongoDB connected");
   } catch (err) {
     console.error("❌ MongoDB connection failed:", err);
@@ -11,4 +11,3 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
- 

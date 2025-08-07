@@ -8,13 +8,13 @@ async function storeCertHashOnBlockchain(certificateHash) {
       {
         data: certificateHash, // ✅ store the cert hash
         chain: 'MATIC',   // ✅ use a testnet chain
-        fromPrivateKey: process.env.REACT_APP_PRIVATE_KEY,
-        from: process.env.REACT_APP_TO_ADDRESS,
-        to: process.env.REACT_APP_TO_ADDRESS,
+        fromPrivateKey: process.env.PRIVATE_KEY,
+        from: process.env.TO_ADDRESS,
+        to: process.env.TO_ADDRESS,
       },
       {
         headers: {
-          'x-api-key': process.env.REACT_APP_TATUM_API_KEY,
+          'x-api-key': process.env.TATUM_API_KEY,
           'Content-Type': 'application/json',
           'accept': 'application/json'
         }

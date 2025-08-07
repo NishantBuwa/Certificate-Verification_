@@ -4,6 +4,7 @@ const cors = require('cors')
 const authRoute = require('./routes/authRoute')
 const certificateRoute = require('./routes/certificateRoute')
 const dashboardRoute = require('./routes/dashboardRoute')
+const orderRoute = require('./routes/order')
 const db = require('./db')
 const PORT = 5000
 
@@ -18,13 +19,12 @@ app.use(cors({
     credentials: true
 }))
 
-// app.options('*', cors()); 
-
 app.use(express.json())
 
 app.use('/api/auth', authRoute)
 app.use('/api/certificate', certificateRoute)
 app.use('/api/dashboard', dashboardRoute)
+app.use('/api/payment', orderRoute)
 
 app.get('/', (req, res) => {
     res.send('Server is running');
