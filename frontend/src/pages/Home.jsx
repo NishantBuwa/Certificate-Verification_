@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import cer1 from '../assets/cer1.png'
 import cer2 from '../assets/cer2.png'
 import Data from '../assets/Data.json'
@@ -17,6 +17,21 @@ function Home() {
         issueDate: ''
     })
 
+    useEffect(() => {
+        const startServer = async () => {
+            try {
+                const data = await fetch(`${REACT_APP_API_URL}/start`);
+                const res = await data.json();
+                if (res) {
+                    // toast.success('Server Started');
+                }
+            } catch (err) {
+                // console.log(err);
+            }
+        }
+        startServer()
+    }, [])
+
     const handleApi = async () => {
         const dataToSend = {
             ...data
@@ -31,7 +46,7 @@ function Home() {
             })
             const resData = await res.json();
             if (resData.valid === true) {
-                console.log(resData.details.issuedBy, resData.details.issuedFrom)
+                // console.log(resData.details.issuedBy, resData.details.issuedFrom)
                 toast.success(`${resData.message}. Issued By: ${resData.details.issuedBy} (${resData.details.issuedFrom})`)
             } else if (resData.valid === false) {
                 toast.error(`${resData.message}, Original Holder: ${resData.details.studentName}`)
@@ -39,7 +54,7 @@ function Home() {
                 toast.error(`${resData.message}`)
             }
         } catch (err) {
-            console.log("Error occured during verification: ", err)
+            // console.log("Error occured during verification: ", err)
         }
     }
 
@@ -52,7 +67,7 @@ function Home() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Data: ", data);
+        // console.log("Form Data: ", data);
         await handleApi()
         setData({
             studentName: '',

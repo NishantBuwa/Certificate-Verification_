@@ -106,7 +106,7 @@ function Signup({ setAdmin }) {
             rzp.open();
 
         } catch (error) {
-            console.log("Payment Init Error:", error);
+            // console.log("Payment Init Error:", error);
             // toast.error("Something went wrong with payment.");
         }
     };

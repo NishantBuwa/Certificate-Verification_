@@ -22,7 +22,7 @@ function Login({setAdmin}) {
     
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log("Form Data: ", formData);
+        // console.log("Form Data: ", formData);
         handleApi();
         setFormData({
             iemail: '',
@@ -40,7 +40,7 @@ function Login({setAdmin}) {
                 body:JSON.stringify(formData)
             })
             const data = await res.json();
-            console.log(data);
+            // console.log(data);
             if(data.success){
                 setAdmin({
                     name:data.user.name,
@@ -54,7 +54,7 @@ function Login({setAdmin}) {
                 navigate('/')
             }
         }catch(err){
-            console.log(err)
+            // console.log(err)
         }
     }
 

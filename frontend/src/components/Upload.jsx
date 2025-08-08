@@ -26,7 +26,7 @@ function Upload({admin}) {
                 body: JSON.stringify(dataToSend)
             })
             const data = await res.json()
-            console.log(data)
+            // console.log(data)
             if(data.uploaded){
                 toast.success(data.message)
             } else {
@@ -50,7 +50,7 @@ function Upload({admin}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(formData);
+        // console.log(formData);
         handleApi();
         setFormData({
             studentName: '',

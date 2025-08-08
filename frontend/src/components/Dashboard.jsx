@@ -26,7 +26,7 @@ function Dashboard({admin}) {
                 body: JSON.stringify(dataToSend)
             })
             const data = await res.json()
-            console.log(data)
+            // console.log(data)
             if(data.success){
                 setResponseData({
                     totalByInstitute:data.data.totalByInstitute,
@@ -34,7 +34,7 @@ function Dashboard({admin}) {
                 })
             }
         } catch (err) {
-            console.log("Error Occured during api: ", err)
+            // console.log("Error Occured during api: ", err)
         }
     }
 
@@ -43,7 +43,7 @@ function Dashboard({admin}) {
             const dataToSend={
                 certificateID:cerId
             }
-            console.log(dataToSend)
+            // console.log(dataToSend)
             const res = await fetch(`${process.env.REACT_APP_API_URL}/api/dashboard/search`,{
                 method:'POST',
                 headers:{

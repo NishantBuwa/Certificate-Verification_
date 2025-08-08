@@ -37,7 +37,7 @@ function Change() {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(formData);
+        // console.log(formData);
         alert('Previous password is wrong')
         setFormData({
             previousPassword: '',
