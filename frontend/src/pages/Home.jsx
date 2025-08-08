@@ -20,7 +20,7 @@ function Home() {
     useEffect(() => {
         const startServer = async () => {
             try {
-                const data = await fetch(`${REACT_APP_API_URL}/start`);
+                const data = await fetch(`${REACT_APP_API_URL}/`);
                 const res = await data.json();
                 if (res) {
                     // toast.success('Server Started');
