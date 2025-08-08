@@ -11,7 +11,7 @@ function Header() {
                 </div>
                 <div className="right flex md:gap-12 md:mr-8 sm:gap-6 mr-3 gap-3 ">
                     <Link to='/'>Home</Link>
-                    <Link to='/'>About</Link>
+                    {/* <Link to='/'>About</Link> */}
                     <Link to='/signup'>Signup</Link>
                     <Link to='/login'>Login</Link>
                 </div>
