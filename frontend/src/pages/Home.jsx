@@ -131,7 +131,7 @@ function Home() {
                                 </ul>
                             </div>
                             <div className="px-0">
-                                <Link to='/signup'>
+                                <Link to={`/signup?plan=${encodeURIComponent(item.heading.replace(" Plan",""))}`}>
                                     <button type='button' className='w-full bg-black mb-0 py-2 text-blue-600'>Check Out ➡️</button>
                                 </Link>
                             </div>

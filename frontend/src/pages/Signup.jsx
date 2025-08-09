@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link, useSearchParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 const loadRazorpayScript = () => {
@@ -23,6 +23,9 @@ function Signup({ setAdmin }) {
 
     const navigate = useNavigate()
 
+    const [searchParams] = useSearchParams();
+    const defaultPlan = searchParams.get('plan') || 'Basic'; // fallback
+
     const [formData, setFormData] = useState({
         name: '',
         iname: '',
@@ -30,7 +33,7 @@ function Signup({ setAdmin }) {
         employeeid: '',
         password: '',
         cpassword: '',
-        plan: 'basic',
+        plan: defaultPlan,
     })
 
     const onChange = (e) => {
@@ -228,9 +231,9 @@ function Signup({ setAdmin }) {
                             value={formData.plan}
                             onChange={onChange}
                         >
-                        <option value="basic"> Basic</option>
-                        <option value="standard">Standard</option>
-                        <option value="premium">Premium</option>
+                        <option value="Basic"> Basic</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Premium">Premium</option>
                     </select>
 
             </div>
