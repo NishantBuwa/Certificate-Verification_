@@ -5,7 +5,7 @@ import {toast} from 'react-toastify'
 
 function Login({setAdmin}) {
 
-    const input='sm:w-[250px] w-[130px] border border-black outline-none rounded-[4px] sm:p-1 px-1 sm:text-[16px] text-[13px]'
+    const input='sm:w-[250px] w-[130px] border border-black outline-none rounded-[4px] sm:p-1 px-1 py-[3px] sm:text-[16px] text-[10px]'
 
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
@@ -71,7 +71,7 @@ function Login({setAdmin}) {
                             value={formData.iemail}
                             onChange={onChange}
                             className={`${input}`}
-                            placeholder='Dummy Email: test@college.com'
+                            placeholder='Dummy: test@college.com'
                             required
                         ></input>
                     </div>
@@ -84,7 +84,7 @@ function Login({setAdmin}) {
                             value={formData.password}
                             onChange={onChange}
                             className={`${input}`}
-                            placeholder='Dummy Password: 1234'
+                            placeholder='Dummy: 1234'
                             required
                         />
                     </div>
