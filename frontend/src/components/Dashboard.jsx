@@ -69,7 +69,7 @@ function Dashboard({admin}) {
     },[])
 
     return (
-        <div className='h-full w-auto flex items-center bg-red-500'>
+        <div className='h-full w-auto flex items-center'>
             <div className="sm:mx-auto big-card xl:h-[350px] xl:w-[1000px] w-[auto] xl:bg-slate-400 rounded-2xl flex lg:gap-8 gap-7 items-center justify-center flex-wrap text-white">
                 <div className={`${small_div} items-center gap-5`}>
                     <h1 className='font-bold xl:text-xl sm:text-base text-[12px]'>Total Certificate Issued By Your Institute :</h1>

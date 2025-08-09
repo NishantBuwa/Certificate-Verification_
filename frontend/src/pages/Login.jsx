@@ -71,6 +71,7 @@ function Login({setAdmin}) {
                             value={formData.iemail}
                             onChange={onChange}
                             className={`${input}`}
+                            placeholder='Dummy Email: test@college.com'
                             required
                         ></input>
                     </div>
@@ -83,6 +84,7 @@ function Login({setAdmin}) {
                             value={formData.password}
                             onChange={onChange}
                             className={`${input}`}
+                            placeholder='Dummy Password: 1234'
                             required
                         />
                     </div>
