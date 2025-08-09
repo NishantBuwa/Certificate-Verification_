@@ -83,7 +83,7 @@ function Dashboard({admin}) {
                     <h1 className='font-bold xl:text-xl sm:text-base text-[12px]'><label htmlFor="cerid">Search Certificate By ID: </label></h1>
                     <label htmlFor="" className='xl:text-[20px] sm:text-[15px] text-[12px]'>Enter Certificate ID:</label>
                     <div className="mt-[-20px] flex items-center justify-between">
-                        <input type="text" className='outline-none border border-black sm:px-2 px-1 xl:py-1 text-black xl:w-auto w-[100px]' value={cerId} onChange={(e)=>setCerId(e.target.value)}/>
+                        <input type="text" placeholder='Demo: CER-1' className='outline-none border border-black sm:px-2 px-1 xl:py-1 text-black xl:w-auto w-[100px]' value={cerId} onChange={(e)=>setCerId(e.target.value)}/>
                         <button type="button" onClick={searchApi}><img src={search} className='invert' height="20px" width="20px"  alt="" /></button>
                     </div>
                 </div>

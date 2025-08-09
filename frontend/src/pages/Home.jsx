@@ -157,6 +157,7 @@ function Home() {
                                 value={data.studentName}
                                 onChange={handleOnChange}
                                 className={`${input}`}
+                                placeholder='Raj'
                                 required
                             />
                         </div>
@@ -169,6 +170,7 @@ function Home() {
                                 value={data.course}
                                 onChange={handleOnChange}
                                 className={`${input}`}
+                                placeholder='C#'
                                 required
                             />
                         </div>
@@ -181,6 +183,7 @@ function Home() {
                                 value={data.issueDate}
                                 onChange={handleOnChange}
                                 className={`${input}`}
+                                placeholder='2025-08-09'
                                 required
                             />
                         </div>
@@ -193,6 +196,7 @@ function Home() {
                                 value={data.certificateID}
                                 onChange={handleOnChange}
                                 className={`${input}`}
+                                placeholder='CER-1'
                                 required
                             />
                         </div>
